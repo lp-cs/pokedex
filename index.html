@@ -5,12 +5,37 @@
     </head>
     <body>
         <div class="searchbox">
-            <h3>ID Search</h3>
             <input id="idsearch" value="raichu" type="textbox">
-            <button type="button" onclick="api_data_search();">Get Value</button>
+            <button type="button" onclick="api_data_search()">Get Value</button>
         </div>
         <hr />
-        <div class="pokemon"></div>
+        <div class="pokemon_name">
+            
+        </div>
+        <div class="pokemon_sprites">
+            
+        </div>
+        <div class="sprite_buttons">
+            <button onclick="display_sprite('front_default')" >Front</button>
+            <button onclick="display_sprite('back_default')">Back</button>
+            <button onclick="display_sprite('front_shiny')">Shiny Front</button>
+            <button onclick="display_sprite('back_shiny')">Shiny Back</button>
+        </div>
+        <div class="pokemon_details">
+            
+        </div>
+        <div class="pokemon_abiliy_list">
+            <h3>Ability</h3>
+            <ul class="ability_list">
+                
+            </ul>
+        </div>
+        <div class="pokemon_move_list">
+            <h3>Moves</h3>
+            <ul class="move_list">
+                
+            </ul>
+        </div>
         <script src="main.js"></script>
     </body>
 </html>
