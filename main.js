@@ -28,14 +28,30 @@ const generateHTML = (data) => {
     console.log(data);
 
     const sprites = data.sprites;
+    const types = data.types;
     const moves = data.moves;
     const abilities = data.abilities;
 
     const pokemon_name_div = document.querySelector('.pokemon_name');
     const pokemon_sprite_div = document.querySelector('.pokemon_sprites');
+    const pokemon_types_div = document.querySelector('.type_list');
     const pokemon_details_div = document.querySelector('.pokemon_details');
     const pokemon_ability_div = document.querySelector('.ability_list');
     const pokemon_moves_div = document.querySelector('.move_list');
+
+    pokemon_name_div.innerHTML = "";
+    pokemon_sprite_div.innerHTML = "";
+    pokemon_details_div.innerHTML = "";
+    pokemon_types_div.innerHTML = "";
+    pokemon_ability_div.innerHTML = "";
+    pokemon_moves_div.innerHTML = "";
+
+    pokemon_sprite_div.innerHTML = `
+        <img id="front_default_sprite" class="pokemon_sprite" src="${sprites.front_default}" />
+        <img id="back_default_sprite" class="pokemon_sprite" src="${sprites.back_default}" />
+        <img id="front_shiny_sprite" class="pokemon_sprite" src="${sprites.front_shiny}" />
+        <img id="back_shiny_sprite" class="pokemon_sprite" src="${sprites.back_shiny}" />
+    `;
 
     var pokemon_details = `
         <div class="details">
@@ -48,15 +64,12 @@ const generateHTML = (data) => {
     abilities.forEach(abilities =>  pokemon_ability_div.innerHTML += 
         "<li>" + abilities.ability.name + "</li>"
     );
-
-    pokemon_sprite_div.innerHTML = `
-        <img id="front_default_sprite" class="pokemon_sprite" src="${sprites.front_default}" />
-        <img id="back_default_sprite" class="pokemon_sprite" src="${sprites.back_default}" />
-        <img id="front_shiny_sprite" class="pokemon_sprite" src="${sprites.front_shiny}" />
-        <img id="back_shiny_sprite" class="pokemon_sprite" src="${sprites.back_shiny}" />
-    `;
     
     display_sprite("front_default");
+
+    types.forEach(types =>  pokemon_types_div.innerHTML += 
+        "<li>" + types.type.name + "</li>"
+    );
 
     pokemon_name_div.innerHTML = 
         "<h1>" + data.name.toUpperCase() + "</h1>"
@@ -70,6 +83,20 @@ const generateHTML = (data) => {
 }
 
 const generateError = () => {
+    const pokemon_name_div = document.querySelector('.pokemon_name');
+    const pokemon_sprite_div = document.querySelector('.pokemon_sprites');
+    const pokemon_types_div = document.querySelector('.type_list');
+    const pokemon_details_div = document.querySelector('.pokemon_details');
+    const pokemon_ability_div = document.querySelector('.ability_list');
+    const pokemon_moves_div = document.querySelector('.move_list');
+
+    pokemon_name_div.innerHTML = "";
+    pokemon_ability_div.innerHTML = "";
+    pokemon_sprite_div.innerHTML = "";
+    pokemon_types_div.innerHTML = "";
+    pokemon_details_div.innerHTML = "";
+    pokemon_moves_div.innerHTML = "";
+
     var html = `<p> No Pokemon Found! </p>`
     const error_message = document.querySelector('.pokemon_details');
     error_message.innerHTML = html;

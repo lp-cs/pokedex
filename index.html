@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Pokemon</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Pokedex</title>
     </head>
     <body>
         <div class="searchbox">
-            <input id="idsearch" value="raichu" type="textbox">
-            <button type="button" onclick="api_data_search()">Get Value</button>
+            <input id="idsearch" value="raichu" type="textbox"  placeholder="Search Name or ID">
+            <button type="button" onclick="api_data_search()">Search</button>
         </div>
         <hr />
         <div class="pokemon_name">
@@ -24,7 +25,13 @@
         <div class="pokemon_details">
             
         </div>
-        <div class="pokemon_abiliy_list">
+        <div class="pokemon_types">
+            <h3>Types</h3>
+            <ul class="type_list">
+                
+            </ul>
+        </div>
+        <div class="pokemon_ability">
             <h3>Ability</h3>
             <ul class="ability_list">
                 
