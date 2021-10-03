@@ -50,7 +50,7 @@ const generateHTML = (data) => {
     pokemon_moves_div.innerHTML = "";
 
     pokemon_name_div.innerHTML = 
-        "<h1>[" + data.id + "]&nbsp" + data.name.toUpperCase() + "</h1>"
+        "<h3>" + data.id + " - " + data.name.toUpperCase() + "</h3>"
     ;
 
     types.forEach(types =>  pokemon_types_div.innerHTML += 
