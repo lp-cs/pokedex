@@ -1,48 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Pokedex</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <script src="js/bootstrap.bundle.min.js"></script>
     </head>
     <body>
-        <div class="searchbox">
-            <input id="idsearch" value="raichu" type="textbox"  placeholder="Search Name or ID">
-            <button type="button" onclick="api_data_search()">Search</button>
+        <div class="container mt-3">
+            <div class="p-5 bg-success text-white text-center rounded">
+                <h1 class="text-center">POKEDEX</h1>
+                <div class="row searchbox text-center">
+                    <div class="d-grid gap-2 col-md-8 mx-auto mt-2">
+                        <input class="form-control" id="idsearch" value="raichu" type="textbox"  placeholder="Search Name or ID">
+                    </div>
+                    <div class="d-grid gap-2 col-md-4 mx-auto mt-2">
+                        <button class="btn btn-outline-light" type="button" onclick="api_data_search()">Search</button>
+                    </div>
+                </div>
+            </div>
+            <hr />
+            <div class="pokemon_name text-center"></div>
+            <div class="pokemon_ability text-center">
+                <span class="ability_list"></span>
+            </div>
+            <div class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner pokemon_sprites text-center"></div>
+            </div>
+            <div class="pokemon_details">
+                <p class="detail_list"></p>
+            </div>
+            <div class="pokemon_type d-grid gap-2 col-md-4 mx-auto mt-2">
+                <p><strong>Types: </strong><span class="type_list"></span></p>
+            </div>
+            <hr />
+            <div class="pokemon_stats">
+                <p class="stat_list"></p>
+              </div>
+            <div class="pokemon_move_list d-grid gap-2 col-md-4 mx-auto mt-3">
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#pokemon_moves">Moves</button>
+            </div>
+            <div class="text-right d-grid gap-2 col-md-4 mx-auto mt-3 mb-5">
+                <a type="button" href="basic.html" class="btn btn-danger">Switch to Basic</a>
+            </div>
         </div>
-        <hr />
-        <div class="pokemon_name">
-            
+        <div class="modal" id="pokemon_moves">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Moves</h4>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+        
+                    <div class="modal-body">
+                        <ul class="move_list list-group list-group-flush""></ul>
+                    </div>
+        
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="pokemon_sprites">
-            
-        </div>
-        <div class="sprite_buttons">
-            <button onclick="display_sprite('front_default')" >Front</button>
-            <button onclick="display_sprite('back_default')">Back</button>
-            <button onclick="display_sprite('front_shiny')">Shiny Front</button>
-            <button onclick="display_sprite('back_shiny')">Shiny Back</button>
-        </div>
-        <div class="pokemon_details">
-            
-        </div>
-        <div class="pokemon_types">
-            <h3>Types</h3>
-            <ul class="type_list">
-                
-            </ul>
-        </div>
-        <div class="pokemon_ability">
-            <h3>Ability</h3>
-            <ul class="ability_list">
-                
-            </ul>
-        </div>
-        <div class="pokemon_move_list">
-            <h3>Moves</h3>
-            <ul class="move_list">
-                
-            </ul>
-        </div>
-        <script src="main.js"></script>
     </body>
+    <script src="js/main.js"></script>
 </html>

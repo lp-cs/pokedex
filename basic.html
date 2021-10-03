@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Pokedex - Basic</title>
+    </head>
+    <body>
+        <div class="searchbox">
+            <input id="idsearch" value="raichu" type="textbox"  placeholder="Search Name or ID">
+            <button type="button" onclick="api_data_search()">Search</button>
+        </div>
+        <hr />
+        <div class="pokemon_name">
+            
+        </div>
+        <div class="pokemon_sprites">
+            
+        </div>
+        <div class="sprite_buttons">
+            <button onclick="display_sprite('front_default')" >Front</button>
+            <button onclick="display_sprite('back_default')">Back</button>
+            <button onclick="display_sprite('front_shiny')">Shiny Front</button>
+            <button onclick="display_sprite('back_shiny')">Shiny Back</button>
+        </div>
+        <div class="pokemon_details">
+            
+        </div>
+        <div class="pokemon_stats">
+            <h3>Statistics</h3>
+            <ul class="stat_list" type="none">
+                
+            </ul>
+        </div>
+        <div class="pokemon_types">
+            <h3>Types</h3>
+            <ul class="type_list" type="none">
+                
+            </ul>
+        </div>
+        <div class="pokemon_ability">
+            <h3>Ability</h3>
+            <ul class="ability_list" type="none">
+                
+            </ul>
+        </div>
+        <div class="pokemon_move_list">
+            <h3>Moves</h3>
+            <ul class="move_list" type="none">
+                
+            </ul>
+        </div>
+        <footer><a href="index.html">Switch to Main</a></footer>
+        <script src="js/basic.js"></script>
+    </body>
+</html>
