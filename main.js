@@ -90,16 +90,12 @@ const generateError = () => {
     const pokemon_ability_div = document.querySelector('.ability_list');
     const pokemon_moves_div = document.querySelector('.move_list');
 
-    pokemon_name_div.innerHTML = "";
-    pokemon_ability_div.innerHTML = "";
-    pokemon_sprite_div.innerHTML = "";
-    pokemon_types_div.innerHTML = "";
-    pokemon_details_div.innerHTML = "";
-    pokemon_moves_div.innerHTML = "";
-
-    var html = `<p> No Pokemon Found! </p>`
-    const error_message = document.querySelector('.pokemon_details');
-    error_message.innerHTML = html;
+    pokemon_name_div.innerHTML = "<h1>Unknown Pokemon</h1>";
+    pokemon_sprite_div.innerHTML = "<p>[No Image to Display]</p>";
+    pokemon_details_div.innerHTML = "<p>[No Details to Display]</p>";
+    pokemon_ability_div.innerHTML = "<li>Unknown Abilities</li>";
+    pokemon_types_div.innerHTML = "<li>Unknown Type</li>";
+    pokemon_moves_div.innerHTML = "<li>Unknown Moves</li>";
 }
 
 function display_sprite(sprite_details){
