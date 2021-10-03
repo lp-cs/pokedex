@@ -42,6 +42,7 @@ const generateHTML = (data) => {
     const pokemon_moves_div = document.querySelector('.move_list');
 
     pokemon_name_div.innerHTML = "";
+    pokemon_types_div.innerHTML = "";
     pokemon_sprite_div.innerHTML = "";
     pokemon_details_div.innerHTML = "";
     pokemon_ability_div.innerHTML = "";
@@ -52,8 +53,8 @@ const generateHTML = (data) => {
         "<h1>[" + data.id + "]&nbsp" + data.name.toUpperCase() + "</h1>"
     ;
 
-    abilities.forEach(abilities =>  pokemon_ability_div.innerHTML += 
-        "<span class='badge bg-secondary'>" + abilities.ability.name + "</span>&nbsp"
+    types.forEach(types =>  pokemon_types_div.innerHTML += 
+        "<span class='badge bg-secondary'>" + types.type.name + "</span>&nbsp"
     );
 
     pokemon_sprite_div.innerHTML = `
@@ -87,9 +88,9 @@ const generateHTML = (data) => {
 
     pokemon_details_div.innerHTML = pokemon_details;
 
-    pokemon_types_div.innerHTML = "<strong>Types: </strong>";
+    pokemon_ability_div.innerHTML = "<strong>Abilities: </strong>";
 
-    pokemon_types_div.innerHTML += types.map(types => types.type.name);
+    pokemon_ability_div.innerHTML += abilities.map(abilities => abilities.ability.name);
 
     moves.forEach(moves =>  pokemon_moves_div.innerHTML += 
         "<li class='list-group-item'>" + moves.move.name + "</li>"

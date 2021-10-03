@@ -4,7 +4,12 @@
         <title>Pokedex</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="author" content="Lawrence">
+        <meta name="description" content="This is a simple pokedex.">
+
+        <link rel="shortcut icon" href="img/favicon.ico" />
         <link href="css/bootstrap.min.css" rel="stylesheet">
+
         <script src="js/bootstrap.bundle.min.js"></script>
     </head>
     <body>
@@ -13,7 +18,7 @@
                 <h1 class="text-center">POKEDEX</h1>
                 <div class="row searchbox text-center">
                     <div class="d-grid gap-2 col-md-8 mx-auto mt-2">
-                        <input class="form-control" id="idsearch" value="raichu" type="textbox"  placeholder="Search Name or ID">
+                        <input class="form-control" id="idsearch" value="eevee" type="textbox"  placeholder="Search Name or ID">
                     </div>
                     <div class="d-grid gap-2 col-md-4 mx-auto mt-2">
                         <button class="btn btn-outline-light" type="button" onclick="api_data_search()">Search</button>
@@ -22,8 +27,8 @@
             </div>
             <hr />
             <div class="pokemon_name text-center"></div>
-            <div class="pokemon_ability text-center">
-                <span class="ability_list"></span>
+            <div class="pokemon_type text-center">
+                <p class="type_list"></p>
             </div>
             <div class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-inner pokemon_sprites text-center"></div>
@@ -31,8 +36,8 @@
             <div class="pokemon_details">
                 <p class="detail_list"></p>
             </div>
-            <div class="pokemon_type d-grid gap-2 col-md-4 mx-auto mt-2">
-                <p class="type_list"></p>
+            <div class="pokemon_ability">
+                <span class="ability_list"></span>
             </div>
             <hr />
             <div class="pokemon_stats">
