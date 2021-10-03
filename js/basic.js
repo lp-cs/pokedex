@@ -69,7 +69,7 @@ const generateHTML = (data) => {
     );
     
     display_sprite("front_default");
-
+    
     types.forEach(types =>  pokemon_types_div.innerHTML += 
         "<li>" + types.type.name + "</li>"
     );
